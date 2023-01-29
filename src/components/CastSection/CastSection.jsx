@@ -1,0 +1,51 @@
+import MovieAPI from "API/API";
+
+//========== hooks ==========
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+//========== components ==========
+import photoPlaceholder from "images/photoPlaceholder.jpg"
+
+//========== styles ==========
+import { Wrapper, Title, List, Item, Photo, Info, Name, Character, Devider, CharacterSpan } from "./CastSection.styled";
+
+const CastSection = () => {
+    const [castInfo, setCastInfo] = useState(null);
+    const { id } = useParams();
+
+    useEffect(() => {
+        MovieAPI.getMovieCredits(id).then(({ cast }) => {
+            const info = cast.reduce((acc, man) => {
+                const profilePhoto = man.profile_path ? `https://image.tmdb.org/t/p/original/${man.profile_path}` : photoPlaceholder;
+                const actor = {
+                    id: man.id,
+                    name: man.name,
+                    character: man.character,
+                    photo: profilePhoto
+                };
+                return [...acc, actor]
+            }, []);
+
+            setCastInfo(info);
+        });
+    }, [id]);
+
+    if (!castInfo) return;
+
+    return <Wrapper>
+        <Title>Cast</Title>
+        <List>
+            {castInfo.map(({ id, photo, name, character }) => <Item key={id}>
+                <Photo src={photo} alt={name} />
+                <Info>
+                    <Name>{name}</Name>
+                    <Character>Character<Devider>I</Devider><CharacterSpan>{character}</CharacterSpan></Character>
+            
+                </Info>
+            </Item>)}
+        </List>
+    </Wrapper>;
+};
+
+export default CastSection;
