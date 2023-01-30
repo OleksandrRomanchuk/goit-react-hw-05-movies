@@ -19,6 +19,8 @@ export const HeaderNav = styled.header`
 	justify-content: center;
 
 	background-color: rgb(15, 15, 28);
+
+	z-index: 1;
 `;
 
 export const PagesList = styled.ul`
