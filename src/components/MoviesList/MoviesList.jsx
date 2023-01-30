@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 //========== components ==========
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //========== styles ==========
 import {
@@ -33,7 +33,7 @@ const MoviesList = ({ moviesInfo }) => {
 
 				return (
 					<Item key={id}>
-						<NavLink to={`/movies/${id}`} state={{ from: location }}>
+						<Link to={`/movies/${id}`} state={{ from: location }}>
 							<MoviePoster src={poster_path} alt={title} />
 							<Wrapper>
 								<Title>{title}</Title>
@@ -47,7 +47,7 @@ const MoviesList = ({ moviesInfo }) => {
 									)}
 								</InfoWrapper>
 							</Wrapper>
-						</NavLink>
+						</Link>
 					</Item>
 				);
 			})}

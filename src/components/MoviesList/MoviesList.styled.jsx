@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 export const List = styled.ul`
 	display: grid;
@@ -20,10 +19,6 @@ export const Item = styled.li`
 	border: 1px solid grey;
 	border-radius: 3px;
 	overflow: hidden;
-`;
-
-export const CardLink = styled(NavLink)`
-	max-width: 100%;
 `;
 
 export const MoviePoster = styled.img`
