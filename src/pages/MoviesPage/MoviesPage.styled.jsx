@@ -10,12 +10,22 @@ export const FlexContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 
-	width: 768px;
-	padding: 0 20px;
+	/* width: 480px; */
+	padding: 0 25px;
 	padding-top: 10px;
 	padding-bottom: 20px;
 
 	margin: 0 auto;
+
+	@media screen and (min-width: 768px) {
+		width: 768px;
+	}
+
+	@media screen and (min-width: 1280px) {
+		width: 1280px;
+
+		padding: 0 40px;
+	}
 `;
 
 export const Form = styled.form`

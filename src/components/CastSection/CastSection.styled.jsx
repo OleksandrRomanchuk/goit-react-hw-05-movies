@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-	width: 768px;
-	padding: 0 20px;
-
 	margin: 0 auto;
+	margin-top: 25px;
 `;
 
 export const Title = styled.h3`
@@ -21,10 +19,19 @@ export const Message = styled.p`
 
 export const List = styled.ul`
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
 
 	margin-top: 15px;
+
+	@media screen and (min-width: 768px) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+	}
+
+	@media screen and (min-width: 1280px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
 `;
 
 export const Item = styled.li`
@@ -32,9 +39,17 @@ export const Item = styled.li`
 `;
 
 export const Photo = styled.img`
-	max-width: 175px;
-	min-height: 263px;
+	width: 100%;
+	min-height: 302px;
 	object-fit: contain;
+
+	@media screen and (min-width: 768px) {
+		min-height: 347px;
+	}
+
+	@media screen and (min-width: 1280px) {
+		min-height: 437px;
+	}
 `;
 
 export const Info = styled.div`
