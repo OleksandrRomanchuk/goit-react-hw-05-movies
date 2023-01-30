@@ -13,7 +13,7 @@ const MoviesList = ({ moviesInfo }) => {
     const location = useLocation();
 
     return <List>
-        {moviesInfo.map(({ id, title, release_date, vote_average, poster_path }) => {
+        {moviesInfo.map(({ id, title, release_date = '----', vote_average, poster_path }) => {
             const fixedVotes = vote_average.toFixed(1);
             const fixedDate = release_date.split('-').reverse().join('.');
 
@@ -38,7 +38,7 @@ MoviesList.propTypes = {
     moviesInfo: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
-        release_date: PropTypes.string.isRequired,
+        release_date: PropTypes.string,
         vote_average: PropTypes.number.isRequired,
         poster_path: PropTypes.any.isRequired
     }),),
