@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
 //========== styles ==========
-import { BackLink, LinkSpan, Card, Title, Devider, TitleSpan, Poster, InfoWrapper, Info, InfoSpan, AddWrapper, AddTitle, AddList, AddItem,AddLink } from "./MovieInfoPage.styled";
+import { Main, BackLink, LinkSpan, Card, Title, Devider, TitleSpan, Poster, InfoWrapper, Info, InfoSpan, AddWrapper, AddTitle, AddList, AddItem,AddLink } from "./MovieInfoPage.styled";
 
 const MovieInfoPage = () => {
     const { id } = useParams();
@@ -42,7 +42,7 @@ const MovieInfoPage = () => {
     const year = release_date.split('-')[0];
     const rating = vote_average.toFixed(1);
 
-    return <main>
+    return <Main>
         <Container>
             <BackLink to={backLinkHref} title="Go back">
                 <FiChevronsLeft /><LinkSpan>Go back</LinkSpan>
@@ -73,7 +73,7 @@ const MovieInfoPage = () => {
                 <Outlet />
             </Suspense>
         </Container>
-    </main>;
+    </Main>;
 };
 
 export default MovieInfoPage;

@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Main = styled.main`
+    padding-bottom: 20px;
+`;
+
 export const FlexContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -7,8 +11,9 @@ export const FlexContainer = styled.div`
     justify-content: center;
 
     width: 768px;
-    padding: 0 40px;
+    padding: 0 20px;
     padding-top: 10px;
+    padding-bottom: 20px;
 
     margin: 0 auto;
 `;

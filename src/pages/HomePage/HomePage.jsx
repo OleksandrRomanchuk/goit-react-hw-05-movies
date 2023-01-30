@@ -8,6 +8,9 @@ import { Container } from 'components/Container/Container';
 import { MoviesList } from "components/MoviesList/MoviesList";
 import placeholder from 'images/placeholder.jpg'
 
+//========== styled ==========
+import { Main } from "./HomePage.styled";
+
 const HomePage = () => {
     const [movies, setMovies] = useState(null);
 
@@ -31,12 +34,12 @@ const HomePage = () => {
 
     if (!movies) return;
 
-    return <main>
+    return <Main>
         <Container>
             <MoviesList
                 moviesInfo={movies} />
         </Container>
-    </main>;
+    </Main>;
 };
 
 export default HomePage;

@@ -10,7 +10,7 @@ import { FiSearch } from "react-icons/fi";
 import placeholder from 'images/placeholder.jpg'
 
 //========== styles ==========
-import { FlexContainer, Form, Input, Btn } from "./MoviesPage.styled";
+import { Main, FlexContainer, Form, Input, Btn } from "./MoviesPage.styled";
 
 const MoviesPage = () => {
     const [movies, setMovies] = useState(null);
@@ -45,7 +45,7 @@ const MoviesPage = () => {
         setSearchParams({ query: searchQuery });
     };
     
-    return <main>
+    return <Main>
         <FlexContainer>
             <Form onSubmit={onFormSubmit}>
                 <Input type="text" name="query" placeholder="Enter search query" value={searchParams.query} />
@@ -53,7 +53,7 @@ const MoviesPage = () => {
             </Form>
             {movies && <MoviesList moviesInfo={movies} />}
         </FlexContainer>
-    </main>;
+    </Main>;
 };
 
 export default MoviesPage;

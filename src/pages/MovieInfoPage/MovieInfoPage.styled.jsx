@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const Main = styled.main`
+    padding-bottom: 20px;
+`;
+
 export const BackLink = styled(NavLink)`
     display: flex;
     justify-content: baseline;
