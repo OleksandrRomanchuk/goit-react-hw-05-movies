@@ -5,7 +5,9 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 //========== components ==========
-import photoPlaceholder from 'images/photoPlaceholder.jpg';
+import womanProfilePlaceholder from 'images/womanProfilePlaceholder.webp';
+import manProfilePlaceholder from 'images/manProfilePlaceholder.webp';
+import photoPlaceholder from 'images/photoPlaceholder.webp';
 
 //========== styles ==========
 import {
@@ -28,10 +30,16 @@ const CastSection = () => {
 
 	useEffect(() => {
 		MovieAPI.getMovieCredits(id).then(({ cast }) => {
+			console.log(cast);
 			const info = cast.reduce((acc, man) => {
+				const profilePlaceholder = !man.gender
+					? photoPlaceholder
+					: man.gender === 1
+					? womanProfilePlaceholder
+					: manProfilePlaceholder;
 				const profilePhoto = man.profile_path
 					? `https://image.tmdb.org/t/p/original/${man.profile_path}`
-					: photoPlaceholder;
+					: profilePlaceholder;
 				const actor = {
 					id: man.id,
 					name: man.name,

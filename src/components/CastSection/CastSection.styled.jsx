@@ -35,13 +35,17 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	border: 1px solid black;
 `;
 
 export const Photo = styled.img`
 	width: 100%;
-	min-height: 302px;
-	object-fit: contain;
+	min-height: 315px;
+	object-fit: cover;
+	object-position: top;
 
 	@media screen and (min-width: 768px) {
 		min-height: 347px;
