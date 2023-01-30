@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 //========== components ==========
 import { MoviesList } from "components/MoviesList/MoviesList";
 import { FiSearch } from "react-icons/fi";
-import placeholder from 'images/placeholder.jpg'
+import posterPlaceholder from 'images/posterPlaceholder.png'
 
 //========== styles ==========
 import { Main, FlexContainer, Form, Input, Btn } from "./MoviesPage.styled";
@@ -22,7 +22,7 @@ const MoviesPage = () => {
 
         MovieAPI.getMoviesByQuery(query).then((movies) => {
             const info = movies.reduce((acc, movie) => {
-                const poster = movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : placeholder;
+                const poster = movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : posterPlaceholder;
                 const film = {
                     id: movie.id,
                     title: movie.title,

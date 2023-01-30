@@ -19,7 +19,9 @@ export const CardLink = styled(NavLink)`
 
 export const MoviePoster = styled.img`
     max-width: 100%;
-    min-height: 332px;
+    min-height: 351px;
+
+    object-fit: contain;
 `;
 
 export const Wrapper = styled.div`

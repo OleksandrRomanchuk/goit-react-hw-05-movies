@@ -4,7 +4,7 @@ import MovieAPI from "API/API";
 import { Outlet} from "react-router-dom";
 import { Container } from "components/Container/Container";
 import { FiChevronsLeft } from 'react-icons/fi';
-import placeholder from 'images/placeholder.jpg'
+import posterPlaceholder from 'images/posterPlaceholder.png'
 
 //========== hooks ==========
 import { useState, useEffect, Suspense } from "react";
@@ -22,7 +22,7 @@ const MovieInfoPage = () => {
     
     useEffect(() => {
         MovieAPI.getMovieById(id).then((movie) => {
-            const poster = movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : placeholder;
+            const poster = movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : posterPlaceholder;
             const info = {
                 title: movie.title,
                 poster_path: poster,
