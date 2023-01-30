@@ -25,7 +25,6 @@ const MoviesList = ({ moviesInfo }) => {
 	return (
 		<List>
 			{moviesInfo.map(({ id, title, release_date, vote_average, poster_path }) => {
-				console.log('release_date: ', release_date);
 				const fixedVotes = vote_average.toFixed(1);
 				const fixedDate = release_date
 					? release_date.split('-').reverse().join('.')

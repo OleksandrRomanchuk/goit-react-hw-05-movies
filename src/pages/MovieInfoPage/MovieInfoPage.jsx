@@ -59,6 +59,7 @@ const MovieInfoPage = () => {
 	const { title, poster_path, genres, release_date, overview, vote_average } =
 		movieInfo;
 
+	const areGenres = Boolean(genres.length);
 	const year = release_date ? release_date.split('-')[0] : '';
 	const isReleaseDate = Boolean(release_date);
 	const rating = vote_average.toFixed(1);
@@ -91,10 +92,12 @@ const MovieInfoPage = () => {
 								Overview<Devider>I</Devider>
 								<InfoSpan>{overview}</InfoSpan>
 							</Info>
-							<Info>
-								Genres<Devider>I</Devider>
-								<InfoSpan>{genres}</InfoSpan>
-							</Info>
+							{areGenres && (
+								<Info>
+									Genres<Devider>I</Devider>
+									<InfoSpan>{genres}</InfoSpan>
+								</Info>
+							)}
 						</div>
 						<AddWrapper>
 							<AddTitle>Additional information</AddTitle>
