@@ -1,3 +1,4 @@
+//========== helpers ==========
 import MovieAPI from 'API/API';
 
 //========== component ==========

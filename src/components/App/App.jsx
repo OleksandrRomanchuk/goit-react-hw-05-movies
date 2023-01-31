@@ -1,25 +1,29 @@
-import { lazy } from "react";
-import { Routes, Route } from "react-router-dom";
-import { SharedLayout } from "components/SharedLayout/SharedLayout";
+//========== helpers ==========
+import { lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
+//========== components ==========
+import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
-const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage"));
-const MovieInfoPage = lazy(() => import("../../pages/MovieInfoPage/MovieInfoPage"));
-const CastSection = lazy(() => import("../CastSection/CastSection"));
-const ReviewsSection = lazy(() => import("../ReviewsSection/ReviewsSection"));
+const MoviesPage = lazy(() => import('../../pages/MoviesPage/MoviesPage'));
+const MovieInfoPage = lazy(() =>
+	import('../../pages/MovieInfoPage/MovieInfoPage')
+);
+const CastSection = lazy(() => import('../CastSection/CastSection'));
+const ReviewsSection = lazy(() => import('../ReviewsSection/ReviewsSection'));
 
 export const App = () => {
-  return (
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="movies" element={<MoviesPage />} />
-          <Route path="movies/:id" element={<MovieInfoPage />}>
-            <Route path="cast" element={<CastSection />} />
-            <Route path="reviews" element={<ReviewsSection />} />
-          </Route>
-          <Route path="*" element={<HomePage />} />
-        </Route>
-      </Routes>
-  );
+	return (
+		<Routes>
+			<Route path="/" element={<SharedLayout />}>
+				<Route index element={<HomePage />} />
+				<Route path="movies" element={<MoviesPage />} />
+				<Route path="movies/:id" element={<MovieInfoPage />}>
+					<Route path="cast" element={<CastSection />} />
+					<Route path="reviews" element={<ReviewsSection />} />
+				</Route>
+				<Route path="*" element={<HomePage />} />
+			</Route>
+		</Routes>
+	);
 };
