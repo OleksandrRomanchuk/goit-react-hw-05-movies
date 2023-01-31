@@ -60,6 +60,8 @@ export const Info = styled.div`
 	padding-top: 8px;
 	padding-bottom: 8px;
 	padding-left: 4px;
+
+	min-height: 64px;
 `;
 
 export const Name = styled.p`

@@ -30,7 +30,6 @@ const CastSection = () => {
 
 	useEffect(() => {
 		MovieAPI.getMovieCredits(id).then(({ cast }) => {
-			console.log(cast);
 			const info = cast.reduce((acc, man) => {
 				const profilePlaceholder = !man.gender
 					? photoPlaceholder
